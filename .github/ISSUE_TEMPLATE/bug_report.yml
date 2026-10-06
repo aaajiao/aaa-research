@@ -1,0 +1,83 @@
+name: Bug report
+description: Report a broken research workflow, changed website behaviour, or helper failure.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue will be public. Omit cookies, access tokens, passwords, browser profiles, private content, and unredacted personal details. Use public source URLs without signed or sensitive query parameters.
+
+        For a security vulnerability, use [private vulnerability reporting](https://github.com/aaajiao/aaa-research/security/advisories/new) instead of this form.
+  - type: input
+    id: version
+    attributes:
+      label: Skill version or commit
+      description: Identify the installed release or the exact commit being used.
+      placeholder: v1.0.0 or a commit SHA
+    validations:
+      required: true
+  - type: textarea
+    id: host
+    attributes:
+      label: Host environment
+      description: Include the operating system, agent application, browser or reader tool, and relevant versions. Do not attach browser profiles or account details.
+      placeholder: "macOS; agent application/version; connected Chrome/version. For helper failures: Python and curl versions."
+    validations:
+      required: true
+  - type: textarea
+    id: source_urls
+    attributes:
+      label: Public source URL or affected file
+      description: Provide the AAA page and attachment URL involved, or name the repository file. Write Not applicable for failures that occur before a source is opened.
+    validations:
+      required: true
+  - type: input
+    id: retrieved_at
+    attributes:
+      label: Retrieval or failure time
+      description: Include the date, time, and timezone or UTC offset so changing site behaviour can be compared.
+      placeholder: "2026-10-06 14:30 UTC+02:00"
+    validations:
+      required: true
+  - type: dropdown
+    id: reading_level
+    attributes:
+      label: Evidence actually accessed
+      description: Choose the deepest level reached. Explain any mixture of sources below; a search result is not a reading of the original.
+      options:
+        - No page or file could be accessed
+        - Search-index excerpt only
+        - Live search results or catalogue metadata
+        - Image or document preview
+        - Original document pages
+        - Subtitles or an official transcript
+        - Recording playback or audio-derived transcription
+        - Not applicable to this report
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include the question or query, interface language, filters, sorting, and the point where behaviour changed. For media, include the pages or timestamps inspected.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: State what the skill or helper should have done and which instruction or prior result supports that expectation.
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      description: Describe the result, error, or unsupported claim. Distinguish website refusal from an agent or helper error when possible.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitised evidence (optional)
+      description: Add short error messages, relevant helper output, or redacted screenshots. Review URLs and screenshots for sensitive information before posting; do not attach credentials or private source material.

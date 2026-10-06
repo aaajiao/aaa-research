@@ -1,0 +1,4 @@
+interface:
+  display_name: "Asia Art Archive Research"
+  short_description: "Search AAA archives, events, and texts with cited evidence"
+  default_prompt: "Use $aaa-research to investigate this art research question using Asia Art Archive and return a source-backed answer with access limits."
